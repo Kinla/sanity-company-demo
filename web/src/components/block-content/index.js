@@ -5,6 +5,10 @@ import Slideshow from './slideshow'
 
 import typography from '../typography.module.css'
 
+const slug = (title) => {
+  return title.toString().split(' ').join('-')
+}
+
 const serializers = {
   types: {
     block (props) {
@@ -13,7 +17,7 @@ const serializers = {
           return <h1 className={typography.responsiveTitle1}>{props.children}</h1>
 
         case 'h2':
-          return <h2 className={typography.responsiveTitle2}>{props.children}</h2>
+          return <h2 id={slug(props.children)} className={typography.responsiveTitle2}>{props.children}</h2>
 
         case 'h3':
           return <h3 className={typography.responsiveTitle3}>{props.children}</h3>

@@ -46,6 +46,8 @@
 }
 
 .metaContent {
+  position: sticky;
+  top: 1rem;
 }
 
 .publishedAt {
